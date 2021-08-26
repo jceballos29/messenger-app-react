@@ -1,0 +1,121 @@
+.ChatListPanel {
+    width: 100%;
+    height: 100%;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.3fr 1.7fr 0.1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "ChatListHeader"
+      "ChatList"
+      "LowBar"; 
+    grid-area: Dashboard; 
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+  }
+  .ChatListHeader { 
+      width: 100%;
+      height: 120px;  
+      grid-area: ChatListHeader; 
+      border-top-left-radius: 20px;
+      background-color: #99adff;
+      box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+      display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 0.6fr 1.4fr; 
+    grid-template-rows: 0.8fr 1.2fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "ProfilePicture ProfieName"
+      "ProfilePicture ProfileIcons";
+      position: relative;
+      z-index: 100;
+  }
+  
+  .ProfilePicture { 
+      grid-area: ProfilePicture; 
+      border-top-left-radius: 20px; 
+      padding: 5px;  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .ProfilePicture img{
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+  }
+  
+  .ProfieName { 
+      grid-area: ProfieName; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid;
+  }
+  
+  .ProfileIcons { 
+      grid-area: ProfileIcons; 
+      display: grid; 
+      grid-template-columns: repeat(5, 1fr); 
+      grid-template-rows: 1fr; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+      "NewMessage . . . LogOut";
+  }
+  
+  .Notifications { 
+      grid-area: Notifications; 
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #4d73ff;
+      justify-self: center;
+      align-self: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #1b1f2f;
+      
+  }
+  .NewMessage { 
+      grid-area: NewMessage; 
+  
+  }
+  
+  .LogOut { 
+      grid-area: LogOut; 
+  
+  }
+  
+  
+  .ChatList { 
+      width: 100%;
+      height: 660px;
+      grid-area: ChatList; 
+      overflow-y: auto;
+  }
+  
+  .LowBar { 
+      grid-area: LowBar; 
+      width: 100%;
+      height: 40px;
+      border-bottom-left-radius: 20px;
+      background-color: #99adff;
+      box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+      position: relative;
+      z-index: 100;
+  }
+
+  .icon {
+    color: #4d73ff;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: #262d43;
+}

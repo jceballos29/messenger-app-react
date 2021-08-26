@@ -1,0 +1,18 @@
+.InicialPage {
+    width: 100%;
+    height: 100%;
+    grid-area: PanelContainer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.InicialPage img {
+    width: 50%;
+}
+
+.InicialPage  h1 {
+    margin-bottom: 30px;    
+}
