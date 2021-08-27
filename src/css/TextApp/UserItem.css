@@ -1,0 +1,40 @@
+.UserItem{
+    width: 100%;
+    height: 75px;
+    display: grid; 
+    grid-template-columns: 0.6fr 1.4fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "UserImage UserName";
+    background-color: #bdcafa;
+    cursor: pointer
+}
+
+.UserItem:hover {
+    background-color: #a3c3ff;
+  }
+
+.UserName { 
+    grid-area: UserName; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
+    border-bottom: 1px solid #e4eaff;
+}
+
+.UserImage { 
+    grid-area: UserImage; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; 
+}
+
+.UserImage img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+}
+

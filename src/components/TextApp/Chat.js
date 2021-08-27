@@ -19,7 +19,6 @@ function Chat() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
     reset,
   } = useForm();
   const onSubmit = (data) => {
@@ -57,7 +56,7 @@ function Chat() {
         ))
       );
     }
-  }, [messages]);
+  }, [messages,userId,partnerId]);
 
   return (
     <div className="Chat">

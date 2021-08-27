@@ -99,6 +99,10 @@
       position: relative;
       z-index: 1000;
   }
+
+  .ChatList::-webkit-scrollbar {
+    display: none;
+}
   
   .LowBar { 
       grid-area: LowBar; 

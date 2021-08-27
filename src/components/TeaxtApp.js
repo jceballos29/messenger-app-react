@@ -5,6 +5,7 @@ import { getData } from '../services/apiRequests';
 import Chat from './TextApp/Chat';
 import ChatListPanel from './TextApp/ChatListPanel'
 import InicialPage from './TextApp/InicialPage';
+import NewChat from './TextApp/NewChat';
 
 
 
@@ -43,6 +44,9 @@ function TeaxtApp() {
             <div className="TeaxtAppContainer">
                 <div className="Dashboard">
                 <Switch>
+                        <Route path={`${path}/newchat`} userId={id}>
+                            <NewChat />
+                        </Route>
                         <Route path={path}>
                             <ChatListPanel id={id} name={username} image={profilepicture}/>
                         </Route>

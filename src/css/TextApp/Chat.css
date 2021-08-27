@@ -78,6 +78,10 @@
     grid-template-columns: 1fr; 
     grid-template-rows: repeat(12, 1fr); 
     }
+
+  .ChatMessages::-webkit-scrollbar {
+    display: none;
+}
   
   .ChatSend {
     background-color: #c9d5ff;
@@ -126,7 +130,7 @@
 .sent {
     margin: 5px 20px ;
     width: 55%;
-    height: 40px;
+    /* min-height: 40px; */
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
     color: #dee1ed;
@@ -142,7 +146,7 @@
 .received{
     margin: 5px 20px;
     width: 55%;
-    height: 40px;
+    /* min-height: 40px; */
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
     color: #dee1ed;

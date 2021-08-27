@@ -3,7 +3,6 @@ import '../../css/TextApp/ChatListPanel.css'
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt, faCommentAlt } from "@fortawesome/free-solid-svg-icons";
-//import image from "../../provicional/IMG_20210531_182019.jpg"
 import ItemList from './ItemList';
 import { getData } from '../../services/apiRequests';
 
@@ -46,7 +45,9 @@ function ChatListPanel({id, name, image}) {
                     <h4>{name}</h4>
                 </div>
                 <div className="ProfileIcons">
-                    <FontAwesomeIcon icon={faCommentAlt} size="2x" className="NewMessage icon"/>
+                    <FontAwesomeIcon icon={faCommentAlt} size="2x" className="NewMessage icon" onClick={() => {
+                        history.push('/messenger/newchat')
+                    }}/>
                     <FontAwesomeIcon icon={faSignOutAlt} size="2x" className="LogOut icon" onClick={() => {
                         history.push('/signin');
                     }}/>
