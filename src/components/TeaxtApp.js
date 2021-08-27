@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Switch, Route, useRouteMatch } from 'react-router-dom'
 import '../css/TeaxtApp.css'
 import { getData } from '../services/apiRequests';
+import Chat from './TextApp/Chat';
 import ChatListPanel from './TextApp/ChatListPanel'
 import InicialPage from './TextApp/InicialPage';
 
@@ -19,6 +20,8 @@ function TeaxtApp() {
     useEffect(() => {
         //Se debe tomar de firebass
         setId('5fdd9238774450001755805d')
+        // setId('5fde0b33f4491800179eec43')
+
     }, [])
 
     useEffect(() => {
@@ -48,6 +51,9 @@ function TeaxtApp() {
                 </div>
                 <div className="PanelContainer">
                     <Switch>
+                        <Route path={`${path}/chat/:id`}>
+                            <Chat />
+                        </Route>
                         <Route path={path}>
                             <InicialPage />
                         </Route>

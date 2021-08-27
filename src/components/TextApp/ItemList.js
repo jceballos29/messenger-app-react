@@ -1,24 +1,30 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import '../../css/TextApp/ItemList.css'
 import defaultImage from '../../img/user.png'
 import { getData } from '../../services/apiRequests'
 
-function ItemList({id, chatPartner}) {
+function ItemList({userId, id, chatPartner}) {
 
+    const history = useHistory()
+    const [partnerId, setPartnerId] = useState()
     const [partnerName, setPartnerName] = useState()
     const [partnerImage, setPartnerImage] = useState(defaultImage)
     const [messages, setMessages] = useState([])
     const [lastMessage, setLastMessage] = useState({})
 
-    // const unread = () => {
-    //     if(read===false){
-    //         return <div className="unread"></div>
-    //     }
-    // }
+    const unread = () => {
+        if(lastMessage){
+            if(lastMessage.received===true){
+                return <div className="unread"></div>
+            }
+        }
+    }
 
     useEffect(() => {
         if(chatPartner){
+            setPartnerId(chatPartner._id)
             setPartnerName(`${chatPartner.firstName} ${chatPartner.lastName}`)
             if(chatPartner.photoUrl){
                 setPartnerImage(chatPartner.photoUrl)
@@ -62,6 +68,13 @@ function ItemList({id, chatPartner}) {
     return (
         <div className="ItemList" onClick={() => {
             console.log('click');
+            history.push(`/messenger/chat/${id}`, {
+                userId,
+                partnerId,
+                partnerImage,
+                partnerName,
+                messages
+            })
 
         }}>
             <div className="ChatImage">
@@ -84,7 +97,7 @@ function ItemList({id, chatPartner}) {
                 
                 <div className="ChatStatus">
                     {
-
+                        unread()
                     }
                 </div>
             </div>

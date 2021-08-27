@@ -31,10 +31,10 @@ function ChatListPanel({id, name, image}) {
     useEffect(() => {
         if (conversations) {
             setRenderChatList(conversations.map(conversation => (
-                <ItemList key={conversation._id} id={conversation._id} chatPartner={conversation.info}/>
+                <ItemList key={conversation._id} userId={id} id={conversation._id} chatPartner={conversation.info}/>
             )))
         }
-    }, [conversations])
+    }, [conversations,id])
 
     return (
         <div className="ChatListPanel">

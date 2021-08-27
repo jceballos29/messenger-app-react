@@ -30,7 +30,7 @@
       "ProfilePicture ProfieName"
       "ProfilePicture ProfileIcons";
       position: relative;
-      z-index: 100;
+      z-index: 10000;
   }
   
   .ProfilePicture { 
@@ -96,6 +96,8 @@
       height: 660px;
       grid-area: ChatList; 
       overflow-y: auto;
+      position: relative;
+      z-index: 1000;
   }
   
   .LowBar { 
@@ -106,7 +108,7 @@
       background-color: #99adff;
       box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
       position: relative;
-      z-index: 100;
+      z-index: 10000;
   }
 
   .icon {
